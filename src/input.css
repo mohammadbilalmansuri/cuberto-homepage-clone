@@ -1,44 +1,69 @@
 @tailwind base;
-@tailwind components;
-@tailwind utilities;
-
 @layer base {
+  :root {
+    --white: #ffffff;
+    --black: #000000;
+    --lightIndigo: #e0e7ff;
+    --lightSlate: #e2e8f0;
+    --lightOrange: #fff7ed;
+    --lightPurple: #f3e8ff;
+  }
+
   @font-face {
     font-family: "AvertaCY";
-    src: url(../dist/fonts/AvertaCY-Light.woff2);
+    src: url(../dist/assets/fonts/AvertaCY-Light.woff2);
     font-weight: 300;
     font-style: normal;
   }
   @font-face {
     font-family: "AvertaCY";
-    src: url(../dist/fonts/AvertaCY-Regular.woff2);
+    src: url(../dist/assets/fonts/AvertaCY-Regular.woff2);
     font-weight: 400;
     font-style: normal;
   }
   @font-face {
     font-family: "AvertaCY";
-    src: url(../dist/fonts/AvertaCY-Semibold.woff2);
+    src: url(../dist/assets/fonts/AvertaCY-Semibold.woff2);
     font-weight: 600;
     font-style: normal;
   }
   @font-face {
     font-family: "AvertaCY";
-    src: url(../dist/fonts/AvertaCY-Bold.woff2);
+    src: url(../dist/assets/fonts/AvertaCY-Bold.woff2);
     font-weight: 700;
     font-style: normal;
   }
 
   * {
+    box-sizing: border-box;
     font-family: "AvertaCY", sans-serif;
   }
 
   .text-strock-light {
-    -webkit-text-stroke: 1px #000000;
+    -webkit-text-stroke: 1px var(--black);
+    color: transparent;
+  }
+
+  .text-strock-medium {
+    -webkit-text-stroke: 1.5px var(--black);
     color: transparent;
   }
 
   .text-strock-bold {
-    -webkit-text-stroke: 2px #000000;
+    -webkit-text-stroke: 2px var(--black);
     color: transparent;
   }
 }
+
+@tailwind components;
+@layer components {
+  .featured-left-item {
+    @apply min-h-full flex flex-col justify-center gap-2;
+  }
+
+  .h3 {
+    @apply text-5xl capitalize leading-tight font-medium;
+  }
+}
+
+@tailwind utilities;

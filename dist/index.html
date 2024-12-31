@@ -4,68 +4,74 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Cuberto | Digital Product Agency in NYC</title>
-    <link rel="stylesheet" href="./output.css" />
     <link
       rel="shortcut icon"
-      href="https://res.cloudinary.com/samaxy50/image/upload/v1734744647/cubertofavicon.png"
+      href="./assets/cuberto-favicon.webp"
       type="image/x-icon"
     />
     <link
       rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.css"
+      href="https://unpkg.com/lenis@1.1.18/dist/lenis.css"
     />
     <link rel="stylesheet" href="https://unpkg.com/sheryjs/dist/Shery.css" />
+    <link rel="stylesheet" href="./output.css" />
   </head>
-  <body class="w-full h-screen relative translate-all duration-300">
+  <body class="w-full relative translate-all duration-300 overflow-x-hidden">
+    <header class="w-full relative flex flex-col items-center">
+      <div
+        class="w-full flex justify-between items-center lg:p-8 lg:pl-9 p-6 pl-7"
+      >
+        <img class="h-5" src="./assets/cuberto-logo.webp" alt="Cuberto Logo" />
+
+        <button class="flex gap-4 items-center">
+          <p class="-mt-1 text-xl leading-none">menu</p>
+          <div class="magnet flex flex-col gap-1.5 p-2">
+            <div class="w-6 h-0.5 bg-black"></div>
+            <div class="w-6 h-0.5 bg-black"></div>
+          </div>
+        </button>
+      </div>
+    </header>
+
     <main class="w-full relative">
-      <header class="w-full relative z-50">
-        <div class="flex justify-between items-center p-8">
-          <img
-            class="h-5"
-            src="https://res.cloudinary.com/samaxy50/image/upload/v1734744648/cubertologo.png"
-            alt="Cuberto Logo"
-          />
-
-          <div href="#" class="flex gap-5 items-center cursor-pointer">
-            <p class="-mt-1 text-xl leading-none">menu</p>
-            <div class="magnet flex flex-col gap-1.5 p-2">
-              <div class="w-6 h-0.5 bg-black"></div>
-              <div class="w-6 h-0.5 bg-black"></div>
-            </div>
-          </div>
-        </div>
-      </header>
-
-      <section id="banner" class="w-full relative">
-        <div class="flex flex-col items-center gap-5 py-[30vh]">
-          <div>
-            <h5 class="text-2xl pb-2">We make it happen</h5>
-            <h1 class="text-8xl leading-none font-bold tracking-wide">
-              <span class="text-strock-bold cursor-default">Website</span>
-              <span class="text-strock-bold cursor-default">Apps</span>
-              <span class="text-strock-bold cursor-default">Branding</span>
-            </h1>
-          </div>
+      <section id="banner" class="w-full relative flex flex-col items-center">
+        <div
+          class="h-full min-h-[75dvh] flex flex-col sm:text-left text-center justify-center gap-2 lg:p-8 p-6"
+        >
+          <h5 class="sm:text-2xl text-xl">We make it happen</h5>
+          <h1
+            id="banner-heading"
+            class="xl:text-8xl lg:text-7xl md:text-6xl text-5xl leading-none font-bold tracking-wide flex sm:flex-row flex-col lg:gap-5 gap-3"
+          >
+            <span
+              class="lg:text-strock-bold md:text-strock-medium text-strock-light cursor-default"
+              >Website</span
+            >
+            <span
+              class="lg:text-strock-bold md:text-strock-medium text-strock-light cursor-default"
+              >Apps</span
+            >
+            <span
+              class="lg:text-strock-bold md:text-strock-medium text-strock-light cursor-default"
+              >Branding</span
+            >
+          </h1>
         </div>
       </section>
 
-      <section
-        id="featured-section"
-        class="w-full relative flex flex-col items-center"
-      >
-        <div class="w-3/4 flex flex-col gap-10">
-          <h2 class="text-[3.5vw] leading-none pt-20 pb-10">
-            <span>Featured</span><br /><span class="text-strock-light"
-              >Project</span
-            >
+      <section id="featured" class="w-full relative flex flex-col items-center">
+        <div class="w-full max-w-screen-2xl flex flex-col gap-8">
+          <h2 class="text-6xl font-semibold flex flex-col gap-1">
+            <span>Featured</span><span class="text-strock-light">Project</span>
           </h2>
 
-          <div class="featured h-screen w-full grid grid-cols-2 gap-28 py-12">
+          <div id="projects" class="h-dvh w-full flex gap-24 py-16">
             <div
-              class="featured-left col-span-1 min-h-full max-h-full overflow-hidden"
+              id="projects-content"
+              class="w-1/2 min-h-full max-h-full overflow-hidden"
             >
               <div
-                class="featured-left-item min-h-full flex flex-col justify-center gap-2"
+                class="project min-h-full flex flex-col justify-center gap-2"
               >
                 <h4>Punto Pago</h4>
                 <h3 class="text-[2.5vw] capitalize leading-tight font-medium">
@@ -75,7 +81,7 @@
               </div>
 
               <div
-                class="featured-left-item min-h-full flex flex-col justify-center gap-2"
+                class="project min-h-full flex flex-col justify-center gap-2"
               >
                 <h4>Kelvin Zero</h4>
                 <h3 class="text-[2.5vw] capitalize leading-tight font-medium">
@@ -85,7 +91,7 @@
               </div>
 
               <div
-                class="featured-left-item min-h-full flex flex-col justify-center gap-2"
+                class="project min-h-full flex flex-col justify-center gap-2"
               >
                 <h4>Riyadh</h4>
                 <h3 class="text-[2.5vw] capitalize leading-tight font-medium">
@@ -95,7 +101,7 @@
               </div>
 
               <div
-                class="featured-left-item featured-left-item-last min-h-full flex flex-col justify-center gap-2"
+                class="project featured-left-item-last min-h-full flex flex-col justify-center gap-2"
               >
                 <h4>Potion</h4>
                 <h3 class="text-[2.5vw] capitalize leading-tight font-medium">
@@ -106,25 +112,26 @@
             </div>
 
             <div
-              class="featured-right col-span-1 overflow-hidden min-h-full max-h-full"
+              id="projects-images"
+              class="w-1/2 overflow-hidden min-h-full max-h-full"
             >
               <img
-                src="https://res.cloudinary.com/samaxy50/image/upload/v1734744648/cubertoproject1.jpg"
+                src="./assets/cuberto-project1.webp"
                 alt="Image 1"
                 class="w-full min-h-full object-cover object-center"
               />
               <img
-                src="https://res.cloudinary.com/samaxy50/image/upload/v1734744649/cubertoproject2.jpg"
+                src="./assets/cuberto-project2.webp"
                 alt="Image 2"
                 class="w-full min-h-full object-cover object-center"
               />
               <img
-                src="https://res.cloudinary.com/samaxy50/image/upload/v1734744650/cubertoproject3.jpg"
+                src="./assets/cuberto-project3.webp"
                 alt="Image 3"
                 class="w-full min-h-full object-cover object-center"
               />
               <img
-                src="https://res.cloudinary.com/samaxy50/image/upload/v1734744650/cubertoproject14.jpg"
+                src="./assets/cuberto-project4.webp"
                 alt="Image 4"
                 class="w-full min-h-full object-cover object-center"
               />
@@ -132,13 +139,15 @@
           </div>
         </div>
 
-        <div class="h-[260vh] pointer-events-none opacity-0 relative z-0"></div>
+        <div
+          class="h-[250dvh] pointer-events-none opacity-0 relative z-0"
+        ></div>
 
-        <a href="#" class="magnet text-lg capitalize">View All Projects</a>
+        <a href="#" class="magnet text-xl capitalize">View All Projects</a>
       </section>
 
       <section
-        id="resources-section"
+        id="resources"
         class="w-full relative flex flex-col items-center"
       >
         <div class="py-40 w-4/5 flex flex-col items-center">
@@ -155,30 +164,21 @@
 
           <div class="w-full grid grid-cols-3 gap-10 py-20">
             <div class="col-span-1 flex flex-col items-start gap-5">
-              <img
-                src="https://res.cloudinary.com/samaxy50/image/upload/v1734744648/cubertoresource1.png"
-                alt="Resource 1"
-              />
+              <img src="./assets/cuberto-resource1.webp" alt="Resource 1" />
               <h6 class="px-3 py-2 bg-gray-100">Design Course</h6>
               <h4 class="text-[1.3vw] font-semibold leading-tight">
                 How To Make Epic Website // Frontend Development
               </h4>
             </div>
             <div class="col-span-1 flex flex-col items-start gap-5">
-              <img
-                src="https://res.cloudinary.com/samaxy50/image/upload/v1734744648/cubertoresource2.png"
-                alt="Resource 2"
-              />
+              <img src="./assets/cuberto-resource2.webp" alt="Resource 2" />
               <h6 class="px-3 py-2 bg-gray-100">Dev Source</h6>
               <h4 class="text-[1.3vw] font-semibold leading-tight">
                 Cuberto Mouse Follower
               </h4>
             </div>
             <div class="col-span-1 flex flex-col items-start gap-5">
-              <img
-                src="https://res.cloudinary.com/samaxy50/image/upload/v1734744649/cubertoresource3.jpg"
-                alt="Resource 3"
-              />
+              <img src="./assets/cuberto-resource3.webp" alt="Resource 3" />
               <h6 class="px-3 py-2 bg-gray-100">Dev Source</h6>
               <h4 class="text-[1.3vw] font-semibold leading-tight">
                 Making switch with SVG Distortion Effect
@@ -190,14 +190,14 @@
         </div>
       </section>
 
-      <section id="inspiro-section" class="w-full flex flex-col items-center">
+      <section id="inspiro" class="w-full flex flex-col items-center">
         <div class="pb-40 w-4/5 flex flex-col gap-16">
           <h2 class="text-[3.5vw] leading-none">New day -<br />new inspiro</h2>
 
           <div class="w-full grid grid-cols-4 gap-10">
             <div class="col-span-1 flex flex-col items-start justify-end gap-3">
               <img
-                src="https://res.cloudinary.com/samaxy50/image/upload/v1734744648/cubertoinspiro1.jpg"
+                src="./assets/cuberto-inspiro1.webp"
                 alt="Inspiro 1"
                 class="object-cover object-center w-full"
               />
@@ -223,7 +223,7 @@
 
             <div class="col-span-1 flex flex-col items-start justify-end gap-3">
               <img
-                src="https://res.cloudinary.com/samaxy50/image/upload/v1734744648/cubertoinspiro2.png"
+                src="./assets/cuberto-inspiro2.webp"
                 alt="Inspiro 2"
                 class="object-cover object-center w-full"
               />
@@ -249,7 +249,7 @@
 
             <div class="col-span-1 flex flex-col items-start justify-end gap-3">
               <img
-                src="https://res.cloudinary.com/samaxy50/image/upload/v1734744649/cubertoinspiro3.jpg"
+                src="./assets/cuberto-inspiro3.webp"
                 alt="Inspiro 3"
                 class="object-cover object-center w-full"
               />
@@ -275,7 +275,7 @@
 
             <div class="col-span-1 flex flex-col items-start justify-end gap-3">
               <img
-                src="https://res.cloudinary.com/samaxy50/image/upload/v1734744649/cubertoinspiro4.png"
+                src="./assets/cuberto-inspiro4.webp"
                 alt="Inspiro 4"
                 class="object-cover object-center w-full"
               />
@@ -301,46 +301,44 @@
           </div>
         </div>
       </section>
-
-      <footer
-        class="w-full z-10 min-h-screen bg-black text-white flex flex-col items-center justify-end"
-      >
-        <div class="w-3/4 flex flex-col">
-          <h2
-            class="text-[3.5vw] leading-tight flex flex-col items-start py-40"
-          >
-            <span class="">Have and idea?</span>
-            <span class="font-light">Tell us about it</span>
-          </h2>
-
-          <div class="flex justify-between items-end pb-12">
-            <div class="flex flex-col gap-7">
-              <div class="flex flex-col items-start gap-3">
-                <a class="text-2xl leading-none" href="#">info@cuberto.com</a>
-                <a class="text-xl leading-none" href="#">+1 301 549 9309</a>
-              </div>
-              <p class="flex flex-col gap-1">
-                <span class="text-xs">MAIN OFFICE</span>
-                <span>901 N Pitt Street Alexandria VA, 22314</span>
-              </p>
-
-              <a href="#">Privacy Policy</a>
-            </div>
-
-            <div class="grid grid-cols-3 gap-y-10 gap-x-20">
-              <a class="magnet" href="#">LinkedIn</a>
-              <a class="magnet" href="#">Twitter</a>
-              <a class="magnet" href="#">Behance</a>
-              <a class="magnet" href="#">Dribbel</a>
-              <a class="magnet" href="#">Instagram</a>
-              <a class="magnet" href="#">Youtube</a>
-            </div>
-          </div>
-        </div>
-      </footer>
     </main>
 
-    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
+    <footer
+      class="w-full z-10 min-h-screen bg-black text-white flex flex-col items-center justify-end"
+    >
+      <div class="w-3/4 flex flex-col">
+        <h2 class="text-[3.5vw] leading-tight flex flex-col items-start py-40">
+          <span class="">Have and idea?</span>
+          <span class="font-light">Tell us about it</span>
+        </h2>
+
+        <div class="flex justify-between items-end pb-12">
+          <div class="flex flex-col gap-7">
+            <div class="flex flex-col items-start gap-3">
+              <a class="text-2xl leading-none" href="#">info@cuberto.com</a>
+              <a class="text-xl leading-none" href="#">+1 301 549 9309</a>
+            </div>
+            <p class="flex flex-col gap-1">
+              <span class="text-xs">MAIN OFFICE</span>
+              <span>901 N Pitt Street Alexandria VA, 22314</span>
+            </p>
+
+            <a href="#">Privacy Policy</a>
+          </div>
+
+          <div class="grid grid-cols-3 gap-y-10 gap-x-20">
+            <a class="magnet" href="#">LinkedIn</a>
+            <a class="magnet" href="#">Twitter</a>
+            <a class="magnet" href="#">Behance</a>
+            <a class="magnet" href="#">Dribbel</a>
+            <a class="magnet" href="#">Instagram</a>
+            <a class="magnet" href="#">Youtube</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/0.155.0/three.min.js"></script>
@@ -349,7 +347,6 @@
       type="text/javascript"
       src="https://unpkg.com/sheryjs/dist/Shery.js"
     ></script>
-
     <script src="app.js"></script>
   </body>
 </html>
