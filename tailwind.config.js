@@ -8,7 +8,7 @@ export default {
       black: "#000000",
       white: "#ffffff",
       lightIndigo: "#e0e7ff",
-      lightSlate: "##e2e8f0",
+      lightSlate: "#e2e8f0",
       lightOrange: "#fff7ed",
       lightPurple: "#f3e8ff",
     },

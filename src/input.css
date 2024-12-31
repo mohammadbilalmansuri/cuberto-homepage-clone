@@ -11,25 +11,25 @@
 
   @font-face {
     font-family: "AvertaCY";
-    src: url(../dist/assets/fonts/AvertaCY-Light.woff2);
+    src: url("https://res.cloudinary.com/mohammadbilalmansuri/raw/upload/v1735044583/cuberto/fonts/AvertaCY-Light.woff2");
     font-weight: 300;
     font-style: normal;
   }
   @font-face {
     font-family: "AvertaCY";
-    src: url(../dist/assets/fonts/AvertaCY-Regular.woff2);
+    src: url("https://res.cloudinary.com/mohammadbilalmansuri/raw/upload/v1735044585/cuberto/fonts/AvertaCY-Regular.woff2");
     font-weight: 400;
     font-style: normal;
   }
   @font-face {
     font-family: "AvertaCY";
-    src: url(../dist/assets/fonts/AvertaCY-Semibold.woff2);
+    src: url("https://res.cloudinary.com/mohammadbilalmansuri/raw/upload/v1735044586/cuberto/fonts/AvertaCY-Semibold.woff2");
     font-weight: 600;
     font-style: normal;
   }
   @font-face {
     font-family: "AvertaCY";
-    src: url(../dist/assets/fonts/AvertaCY-Bold.woff2);
+    src: url("https://res.cloudinary.com/mohammadbilalmansuri/raw/upload/v1735044582/cuberto/fonts/AvertaCY-Bold.woff2");
     font-weight: 700;
     font-style: normal;
   }
@@ -61,8 +61,20 @@
     @apply min-h-full flex flex-col justify-center gap-2;
   }
 
+  .h2 {
+    @apply xl:text-6xl lg:text-5xl md:text-4xl text-3xl font-semibold;
+  }
+
   .h3 {
-    @apply text-5xl capitalize leading-tight font-medium;
+    @apply xl:text-5xl lg:text-4xl md:text-3xl text-2xl capitalize leading-tight font-medium;
+  }
+
+  .project {
+    @apply min-h-full flex flex-col justify-center gap-4;
+  }
+
+  .project-mobile {
+    @apply min-h-full flex flex-col justify-center gap-2;
   }
 }
 

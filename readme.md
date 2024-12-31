@@ -8,3 +8,4 @@ A clone of the Cuberto website home page, which is a UI/UX design agency. This p
 - Tailwind CSS
 - JavaScript
 - Shery.js
+- Lenis

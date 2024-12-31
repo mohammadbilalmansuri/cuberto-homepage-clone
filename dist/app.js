@@ -9,8 +9,6 @@
   }
   requestAnimationFrame(raf);
 
-  // ---------------------------------------------------
-
   if ("scrollRestoration" in history) {
     history.scrollRestoration = "manual";
   }
@@ -19,8 +17,6 @@
     window.scrollTo(0, 0);
     ScrollTrigger.refresh();
   });
-
-  // ---------------------------------------------------
 
   if (window.innerWidth >= 1024) {
     Shery.mouseFollower({
@@ -35,76 +31,105 @@
 
   Shery.hoverWithMediaCircle("#banner-heading span", {
     videos: [
-      "./assets/cuberto-video1.mp4",
-      "./assets/cuberto-video2.mp4",
-      "./assets/cuberto-video3.mp4",
+      "https://res.cloudinary.com/mohammadbilalmansuri/video/upload/v1735044579/cuberto/cuberto-video-1.mp4",
+      "https://res.cloudinary.com/mohammadbilalmansuri/video/upload/v1735044578/cuberto/cuberto-video-2.mp4",
+      "https://res.cloudinary.com/mohammadbilalmansuri/video/upload/v1735044579/cuberto/cuberto-video-3.mp4",
     ],
   });
 
-  ScrollTrigger.create({
-    trigger: "#featured",
-    scroller: "body",
-    start: "top top",
-    end: "top 40%",
-    endTrigger: "#resources",
-    scrub: true,
-    onUpdate: (prog) => {
-      const scrollProgress = prog.progress;
-      if (scrollProgress > 0 && scrollProgress <= 0.184) {
-        document.body.style.backgroundColor = "var(--lightIndigo)";
-      } else if (scrollProgress > 0.184 && scrollProgress <= 0.33) {
-        document.body.style.backgroundColor = "var(--lightSlate)";
-      } else if (scrollProgress > 0.33 && scrollProgress <= 0.554) {
-        document.body.style.backgroundColor = "var(--lightOrange)";
-      } else if (scrollProgress > 0.554 && scrollProgress <= 1) {
-        document.body.style.backgroundColor = "var(--lightPurple)";
-      }
-    },
-    onLeaveBack: () => {
-      document.body.removeAttribute("style");
-    },
-    onLeave: () => {
-      document.body.removeAttribute("style");
-    },
-  });
-
-  let featuredLeftItems = document.querySelectorAll(".project");
-
-  gsap.to(featuredLeftItems, {
-    yPercent: -300,
-    ease: "Power1.out",
-    scrollTrigger: {
-      trigger: "#projects",
+  if (window.innerWidth >= 768) {
+    ScrollTrigger.create({
+      trigger: "#featured",
       scroller: "body",
-      pin: true,
       start: "top top",
-      end: "bottom 115%",
-      endTrigger: ".project:last-child",
+      end: "top center",
+      endTrigger: "#resources",
       scrub: true,
-    },
-  });
+      onUpdate: (prog) => {
+        const scrollProgress = prog.progress;
+        if (scrollProgress > 0 && scrollProgress <= 0.184) {
+          document.body.style.backgroundColor = "var(--lightIndigo)";
+        } else if (scrollProgress > 0.184 && scrollProgress <= 0.33) {
+          document.body.style.backgroundColor = "var(--lightSlate)";
+        } else if (scrollProgress > 0.33 && scrollProgress <= 0.554) {
+          document.body.style.backgroundColor = "var(--lightOrange)";
+        } else if (scrollProgress > 0.554 && scrollProgress <= 1) {
+          document.body.style.backgroundColor = "var(--lightPurple)";
+        }
+      },
+      onLeaveBack: () => {
+        document.body.removeAttribute("style");
+      },
+      onLeave: () => {
+        document.body.removeAttribute("style");
+      },
+    });
 
-  Shery.imageEffect("#projects-images", {
-    style: 1,
-    // debug: true,
-    config: { onMouse: { value: 1 } },
-    slideStyle: (setScroll) => {
-      featuredLeftItems.forEach((item, index) => {
-        ScrollTrigger.create({
-          trigger: item,
-          scroller: "body",
-          start: "top top",
-          scrub: true,
-          onUpdate: function (prog) {
-            setScroll(prog.progress + index + 0.4);
-          },
-          onLeaveBack: () => {
-            setScroll(0);
-          },
+    let featuredLeftItems = document.querySelectorAll(".project");
+
+    gsap.to(featuredLeftItems, {
+      yPercent: -300,
+      ease: "Power1.out",
+      scrollTrigger: {
+        trigger: "#projects",
+        scroller: "body",
+        pin: true,
+        start: "top top",
+        end: "bottom 115%",
+        endTrigger: ".project:last-child",
+        scrub: true,
+      },
+    });
+
+    Shery.imageEffect("#projects-images", {
+      style: 1,
+      // debug: true,
+      config: { onMouse: { value: 1 } },
+      slideStyle: (setScroll) => {
+        featuredLeftItems.forEach((item, index) => {
+          ScrollTrigger.create({
+            trigger: item,
+            scroller: "body",
+            start: "top top",
+            scrub: true,
+            onUpdate: function (prog) {
+              setScroll(prog.progress + index + 0.4);
+            },
+            onLeaveBack: () => {
+              setScroll(0);
+            },
+          });
         });
-      });
-    },
-  });
+      },
+    });
+  } else {
+    ScrollTrigger.create({
+      trigger: "#featured",
+      scroller: "body",
+      start: "top top",
+      end: "top center",
+      endTrigger: "#resources",
+      scrub: true,
+      onUpdate: (prog) => {
+        const scrollProgress = prog.progress;
+        if (scrollProgress > 0 && scrollProgress <= 0.293) {
+          document.body.style.backgroundColor = "var(--lightIndigo)";
+        } else if (scrollProgress > 0.293 && scrollProgress <= 0.571) {
+          document.body.style.backgroundColor = "var(--lightSlate)";
+        } else if (scrollProgress > 0.571 && scrollProgress <= 0.849) {
+          document.body.style.backgroundColor = "var(--lightOrange)";
+        } else if (scrollProgress > 0.849 && scrollProgress <= 1) {
+          document.body.style.backgroundColor = "var(--lightPurple)";
+        }
+      },
+      onLeaveBack: () => {
+        document.body.removeAttribute("style");
+      },
+      onLeave: () => {
+        document.body.removeAttribute("style");
+      },
+    });
+  }
 
   Shery.imageEffect("#resources img", {
     style: 2,
@@ -114,24 +139,6 @@
   Shery.imageEffect("#inspiro img", {
     style: 4,
     config: { onMouse: { value: 1 } },
-  });
-
-  const footer = document.querySelector("footer");
-  footer.style.position = "absolute";
-  footer.style.left = 0;
-  footer.style.bottom = `-${footer.offsetHeight}px`;
-
-  gsap.to(footer, {
-    bottom: 0,
-    ease: "power4.out",
-    scrollTrigger: {
-      trigger: "#inspiro",
-      scroller: "body",
-      start: "bottom bottom",
-      end: `bottom ${window.innerHeight - footer.offsetHeight}`,
-      scrub: 2,
-      pin: true,
-    },
   });
 
   ScrollTrigger.refresh();
