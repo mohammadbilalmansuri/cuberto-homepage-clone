@@ -20,7 +20,6 @@
 
   if (window.innerWidth >= 1024) {
     Shery.mouseFollower({
-      //Parameters are optional.
       skew: true,
       ease: "cubic-bezier(0.23, 1, 0.320, 1)",
       duration: 0.3,
@@ -83,7 +82,6 @@
 
     Shery.imageEffect("#projects-images", {
       style: 1,
-      // debug: true,
       config: { onMouse: { value: 1 } },
       slideStyle: (setScroll) => {
         featuredLeftItems.forEach((item, index) => {
@@ -112,13 +110,15 @@
       scrub: true,
       onUpdate: (prog) => {
         const scrollProgress = prog.progress;
-        if (scrollProgress > 0 && scrollProgress <= 0.293) {
+        console.log(scrollProgress);
+
+        if (scrollProgress > 0 && scrollProgress <= 0.245) {
           document.body.style.backgroundColor = "var(--lightIndigo)";
-        } else if (scrollProgress > 0.293 && scrollProgress <= 0.571) {
+        } else if (scrollProgress > 0.245 && scrollProgress <= 0.515) {
           document.body.style.backgroundColor = "var(--lightSlate)";
-        } else if (scrollProgress > 0.571 && scrollProgress <= 0.849) {
+        } else if (scrollProgress > 0.515 && scrollProgress <= 0.785) {
           document.body.style.backgroundColor = "var(--lightOrange)";
-        } else if (scrollProgress > 0.849 && scrollProgress <= 1) {
+        } else if (scrollProgress > 0.785 && scrollProgress <= 1) {
           document.body.style.backgroundColor = "var(--lightPurple)";
         }
       },
@@ -128,6 +128,11 @@
       onLeave: () => {
         document.body.removeAttribute("style");
       },
+    });
+
+    Shery.imageEffect(".project-mobile img", {
+      style: 1,
+      config: { onMouse: { value: 1 } },
     });
   }
 
