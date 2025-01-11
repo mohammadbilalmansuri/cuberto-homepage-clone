@@ -30,9 +30,9 @@
 
   Shery.hoverWithMediaCircle("#banner-heading span", {
     videos: [
-      "https://res.cloudinary.com/mohammadbilalmansuri/video/upload/v1735044579/cuberto/cuberto-video-1.mp4",
-      "https://res.cloudinary.com/mohammadbilalmansuri/video/upload/v1735044578/cuberto/cuberto-video-2.mp4",
-      "https://res.cloudinary.com/mohammadbilalmansuri/video/upload/v1735044579/cuberto/cuberto-video-3.mp4",
+      "https://res.cloudinary.com/mohammadbilalmansuri/video/upload/cuberto/cuberto-video-1.mp4",
+      "https://res.cloudinary.com/mohammadbilalmansuri/video/upload/cuberto/cuberto-video-2.mp4",
+      "https://res.cloudinary.com/mohammadbilalmansuri/video/upload/cuberto/cuberto-video-3.mp4",
     ],
   });
 
