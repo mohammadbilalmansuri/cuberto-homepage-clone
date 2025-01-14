@@ -7,5 +7,6 @@ A clone of the Cuberto website home page, which is a UI/UX design agency. This p
 - HTML
 - Tailwind CSS
 - JavaScript
+- GSAP with ScrollTrigger
 - Shery.js
 - Lenis
