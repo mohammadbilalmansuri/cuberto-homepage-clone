@@ -18,13 +18,20 @@
     ScrollTrigger.refresh();
   });
 
-  if (window.innerWidth >= 1024) {
-    Shery.mouseFollower({
-      skew: true,
-      ease: "cubic-bezier(0.23, 1, 0.320, 1)",
-      duration: 0.3,
-    });
-  }
+  const mediaQuery = window.matchMedia("(min-width: 768px)");
+  const setMouseFollower = () => {
+    if (mediaQuery.matches) {
+      Shery.mouseFollower({
+        skew: true,
+        ease: "cubic-bezier(0.23, 1, 0.320, 1)",
+        duration: 0.3,
+      });
+    } else {
+      document.querySelectorAll(".mousefollower")?.forEach((el) => el.remove());
+    }
+  };
+  setMouseFollower();
+  mediaQuery.addEventListener("change", setMouseFollower);
 
   Shery.makeMagnet(".magnet");
 
