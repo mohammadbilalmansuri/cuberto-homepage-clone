@@ -14,8 +14,8 @@
   }
 
   window.addEventListener("unload", () => {
+    ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
     window.scrollTo(0, 0);
-    ScrollTrigger.refresh();
   });
 
   const mediaQuery = window.matchMedia("(min-width: 768px)");
@@ -43,23 +43,22 @@
     ],
   });
 
-  if (window.innerWidth >= 768) {
+  const setOnScrollBgChange = (bp) => {
     ScrollTrigger.create({
       trigger: "#featured",
       scroller: "body",
       start: "top top",
-      end: "top center",
-      endTrigger: "#resources",
+      end: "top -325%",
       scrub: true,
       onUpdate: (prog) => {
         const scrollProgress = prog.progress;
-        if (scrollProgress > 0 && scrollProgress <= 0.184) {
+        if (scrollProgress >= 0 && scrollProgress <= bp[0]) {
           document.body.style.backgroundColor = "var(--lightIndigo)";
-        } else if (scrollProgress > 0.184 && scrollProgress <= 0.33) {
+        } else if (scrollProgress > bp[0] && scrollProgress <= bp[1]) {
           document.body.style.backgroundColor = "var(--lightSlate)";
-        } else if (scrollProgress > 0.33 && scrollProgress <= 0.554) {
+        } else if (scrollProgress > bp[1] && scrollProgress <= bp[2]) {
           document.body.style.backgroundColor = "var(--lightOrange)";
-        } else if (scrollProgress > 0.554 && scrollProgress <= 1) {
+        } else if (scrollProgress > bp[2] && scrollProgress <= 1) {
           document.body.style.backgroundColor = "var(--lightPurple)";
         }
       },
@@ -70,6 +69,10 @@
         document.body.removeAttribute("style");
       },
     });
+  };
+
+  if (mediaQuery.matches) {
+    setOnScrollBgChange([0.12, 0.288, 0.54]);
 
     let featuredLeftItems = document.querySelectorAll(".project");
 
@@ -81,7 +84,7 @@
         scroller: "body",
         pin: true,
         start: "top top",
-        end: "bottom 115%",
+        end: "bottom bottom",
         endTrigger: ".project:last-child",
         scrub: true,
       },
@@ -108,34 +111,7 @@
       },
     });
   } else {
-    ScrollTrigger.create({
-      trigger: "#featured",
-      scroller: "body",
-      start: "top top",
-      end: "top center",
-      endTrigger: "#resources",
-      scrub: true,
-      onUpdate: (prog) => {
-        const scrollProgress = prog.progress;
-        console.log(scrollProgress);
-
-        if (scrollProgress > 0 && scrollProgress <= 0.245) {
-          document.body.style.backgroundColor = "var(--lightIndigo)";
-        } else if (scrollProgress > 0.245 && scrollProgress <= 0.515) {
-          document.body.style.backgroundColor = "var(--lightSlate)";
-        } else if (scrollProgress > 0.515 && scrollProgress <= 0.785) {
-          document.body.style.backgroundColor = "var(--lightOrange)";
-        } else if (scrollProgress > 0.785 && scrollProgress <= 1) {
-          document.body.style.backgroundColor = "var(--lightPurple)";
-        }
-      },
-      onLeaveBack: () => {
-        document.body.removeAttribute("style");
-      },
-      onLeave: () => {
-        document.body.removeAttribute("style");
-      },
-    });
+    setOnScrollBgChange([0.22, 0.462, 0.705]);
 
     Shery.imageEffect(".project-mobile img", {
       style: 1,
