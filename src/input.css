@@ -1,4 +1,5 @@
 @tailwind base;
+
 @layer base {
   :root {
     --white: #ffffff;
@@ -56,6 +57,7 @@
 }
 
 @tailwind components;
+
 @layer components {
   .featured-left-item {
     @apply min-h-full flex flex-col justify-center gap-2;
